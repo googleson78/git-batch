@@ -63,6 +63,17 @@ case "$1" in
       done
     fi
     ;;
+  clone)
+    if [[ $# != 3 ]]
+    then
+      echo 'USAGE: clone USERNAME REPOSFILE'
+    else
+      for repo in $(cat "${3}")
+      do
+        git clone git@github.com:"${2}"/"${repo}".git
+      done
+    fi
+    ;;
   clean)
     if [[ $# != 2 ]]
     then
