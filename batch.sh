@@ -24,7 +24,7 @@ case "$1" in
       for repo in $(cat "${repos}")
       do
         echo "Copying files $* into ${repo}"
-        cp $* "${repo}"
+        cp -rv $* "${repo}"
 
         cd "${repo}"
         echo "Adding and committing in ${repo} with message ${message}"
