@@ -1,3 +1,5 @@
+# Utils for managing student stuff
+
 ## Batch git repo operations script
 
 A script to operate on many repos at once.
