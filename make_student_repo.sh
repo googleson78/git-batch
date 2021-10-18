@@ -20,7 +20,7 @@ repo_name="fp-lab-2021-22-tasks-${user}"
 auth_header="Authorization: token ${GITHUB_TOKEN}"
 
 # grep here so we don't depend on jq ;/
-repo_not_found=$(curl \
+repo_not_found=$(curl -s \
   -H "Accept: application/vnd.github.v3+json" \
   -H "${auth_header}" \
   "https://api.github.com/repos/googleson78/$repo_name" | grep -o "Not Found" || true)
