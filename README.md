@@ -1,6 +1,12 @@
 # Utils for managing student stuff
 
-## Batch git repo operations script
+## `make_student_repo.sh` - Student repo creation
+
+Pass the github username of a user to create a private repo for them and invite them.
+
+**Note** that if the user doesn't exist we will still create the repo.
+
+## `git_batch.sh` - Batch git repo operations script
 
 A script to operate on many repos at once.
 
