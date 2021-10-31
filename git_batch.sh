@@ -106,6 +106,6 @@ case "$1" in
     fi
     ;;
   *)
-    echo "Command must be one of: commit, push, pull, clean, resethard"
+    echo "Command must be one of: commit, pull, push, clone, clean, resethard"
     exit 1
 esac
