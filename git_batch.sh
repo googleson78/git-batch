@@ -90,7 +90,22 @@ case "$1" in
       done
     fi
     ;;
+  resethard)
+    if [[ $# != 3 ]]
+    then
+      echo 'USAGE: resethard REPOSFILE REF'
+      echo 'Runs reset --hard (targetting REF)'
+    else
+      for repo in $(cat "${2}")
+      do
+        cd "${repo}"
+        echo "Resetting ${repo} to ${3}"
+        git reset --hard "${3}"
+        cd "${origdir}"
+      done
+    fi
+    ;;
   *)
-    echo "Command must be one of: commit, push, pull, clean"
+    echo "Command must be one of: commit, push, pull, clean, resethard"
     exit 1
 esac
