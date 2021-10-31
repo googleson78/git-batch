@@ -66,11 +66,11 @@ case "$1" in
   clone)
     if [[ $# != 3 ]]
     then
-      echo 'USAGE: clone USERNAME REPOSFILE'
+      echo 'USAGE: clone REPOSFILE USERNAME'
     else
-      for repo in $(cat "${3}")
+      for repo in $(cat "${2}")
       do
-        git clone git@github.com:"${2}"/"${repo}".git
+        git clone git@github.com:"${3}"/"${repo}".git
       done
     fi
     ;;
