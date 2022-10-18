@@ -61,8 +61,11 @@ case "$1" in
       host_username="${3}"
       for student_username in ${students}
       do
-        git branch "${student_username}"
-        git remote add $(remote_name "${student_username}") "git@github.com:${host_username}/fp-lab-2022-23-tasks-${student_username}.git"
+        if ! $(git branch --list | grep --quiet "${student_username}")
+        then
+          git branch "${student_username}"
+          git remote add $(remote_name "${student_username}") "git@github.com:${host_username}/fp-lab-2022-23-tasks-${student_username}.git"
+        fi
       done
     fi
     ;;
