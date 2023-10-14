@@ -16,7 +16,7 @@ then
 fi
 
 user="${1}"
-repo_name="fp-lab-2022-23-tasks-${user}"
+repo_name="fp-lab-2023-24-tasks-${user}"
 auth_header="Authorization: token ${GITHUB_TOKEN}"
 
 # grep here so we don't depend on jq ;/
